@@ -40,4 +40,6 @@ const userResumeSchema = new Schema({
   userSkills: String,
 });
 
-module.exports = mongoose.model("UserResumeData", userResumeSchema);
+const UserResumeSchema = mongoose.model("UserResumeData", userResumeSchema);
+
+module.exports = UserResumeSchema;

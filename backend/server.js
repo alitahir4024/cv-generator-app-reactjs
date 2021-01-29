@@ -3,7 +3,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const UserResumeData = require("./models/userResumeSchema.js");
-const userResumeSchema = require("./models/userResumeSchema.js");
 const app = express();
 
 app.use(cors());
@@ -36,10 +35,14 @@ app.post("/api", (req, res) => {
 
 app.get("/api", (req, res) => {
   UserResumeData.find().then((ServerResponse) => {
-    res.send(ServerResponse);
+    if (ServerResponse === []) {
+      res.send("undefined");
+    } else {
+      res.send(ServerResponse);
+    }
   });
 });
 
-app.listen("9999", () => {
+app.listen(process.env.PORT || 9999, () => {
   console.log("server is listening at port 9999");
 });
