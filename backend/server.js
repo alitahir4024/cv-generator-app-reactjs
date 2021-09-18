@@ -1,48 +1,37 @@
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const UserResumeData = require("./models/userResumeSchema.js");
 const app = express();
 
 app.use(cors());
+require("dotenv").config();
 
 mongoose
-  .connect(
-    "mongodb+srv://theDevNinja:ninja123@basiccluster.d4wud.mongodb.net/theDevNinja?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
+  .connect(process.env.DB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("DB connected");
   });
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
 
 // set the data to DB
 
-app.post("/api", (req, res) => {
-  var user = new UserResumeData(req.body);
-  user
-    .save()
-    .then((res) => {
-      console.log(res);
-    })
-    .then(() => {
-      console.log(res.send);
-    });
+app.post("/api", async (req, res) => {
+  const data = await UserResumeData.create(req.body);
+  res.send({ success: true, resumeData: data });
 });
 
-app.get("/api", (req, res) => {
-  UserResumeData.find().then((ServerResponse) => {
-    if (ServerResponse === []) {
-      res.send("undefined");
-    } else {
-      res.send(ServerResponse);
-    }
-  });
+app.get("/api/:id", async (req, res) => {
+  const data = await UserResumeData.findById(req.params.id);
+  res.send({ success: true, resumeData: data });
 });
 
 app.listen(process.env.PORT || 9999, () => {
-  console.log("server is listening at port 9999");
+  console.log(
+    `server is listening at port ${process.env.PORT} in ${process.env.NODE_ENV} environment`
+  );
 });

@@ -10,7 +10,7 @@ function App() {
     <Router>
       <NavBar />
       <Route path="/" exact component={FormComponent} />
-      <Route path="/view_resume" exact component={ResumeComponent} />
+      <Route path="/view_resume/:id" exact component={ResumeComponent} />
     </Router>
   );
 }

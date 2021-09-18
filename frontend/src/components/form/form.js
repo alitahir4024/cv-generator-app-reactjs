@@ -23,7 +23,7 @@ const FormComponent = ({ history }) => {
     setUserSecondName(e.target.value);
   };
   // gender of user
-  const [userGender, setUserGender] = useState("");
+  const [userGender, setUserGender] = useState("Male");
   const handleUserGender = (e) => {
     setUserGender(e.target.value);
   };
@@ -63,7 +63,8 @@ const FormComponent = ({ history }) => {
     setUserProfileDescription(e.target.value);
   };
   // user profile website
-  const [userFirstProfileWebsite, SetUserFirstProfileWebsite] = useState("");
+  const [userFirstProfileWebsite, SetUserFirstProfileWebsite] =
+    useState("GitHub");
   const handleFirstUserProfileWebsite = (e) => {
     SetUserFirstProfileWebsite(e.target.value);
   };
@@ -73,7 +74,8 @@ const FormComponent = ({ history }) => {
     SetUserGitHubProfileName(e.target.value);
   };
   // user profile website
-  const [userSecondProfileWebsite, SetUserSecondProfileWebsite] = useState("");
+  const [userSecondProfileWebsite, SetUserSecondProfileWebsite] =
+    useState("LinkedIn");
   const handleSecondUserProfileWebsite = (e) => {
     SetUserSecondProfileWebsite(e.target.value);
   };
@@ -83,7 +85,8 @@ const FormComponent = ({ history }) => {
     SetUserLinkedInProfileName(e.target.value);
   };
   // user profile website
-  const [userThirdProfileWebsite, SetUserThirdProfileWebsite] = useState("");
+  const [userThirdProfileWebsite, SetUserThirdProfileWebsite] =
+    useState("Personal Website");
   const handleThirdUserProfileWebsite = (e) => {
     SetUserThirdProfileWebsite(e.target.value);
   };
@@ -103,9 +106,8 @@ const FormComponent = ({ history }) => {
     setUserHighSchoolName(e.target.value);
   };
   // user high school degree starting date
-  const [userHighSchoolStartingDate, setUserHighSchoolStartingDate] = useState(
-    ""
-  );
+  const [userHighSchoolStartingDate, setUserHighSchoolStartingDate] =
+    useState("");
   const handleUserHighSchoolDegreeStartingDate = (e) => {
     setUserHighSchoolStartingDate(e.target.value);
     console.log(e.target.value);
@@ -181,18 +183,14 @@ const FormComponent = ({ history }) => {
     setUser1stCompanyName(e.target.value);
   };
   // user 1st experience starting date
-  const [
-    user1stExperienceStartingDate,
-    setUser1stExperienceStartingDate,
-  ] = useState("");
+  const [user1stExperienceStartingDate, setUser1stExperienceStartingDate] =
+    useState("");
   const handleUser1stExperienceStartingDate = (e) => {
     setUser1stExperienceStartingDate(e.target.value);
   };
   // user 1st experience ending date
-  const [
-    user1stExperienceEndingDate,
-    setUser1stExperienceEndingDate,
-  ] = useState("");
+  const [user1stExperienceEndingDate, setUser1stExperienceEndingDate] =
+    useState("");
   const handleUser1stExperienceEndingDate = (e) => {
     setUser1stExperienceEndingDate(e.target.value);
   };
@@ -212,18 +210,14 @@ const FormComponent = ({ history }) => {
     setUser2ndCompanyName(e.target.value);
   };
   // user 2nd experience starting date
-  const [
-    user2ndExperienceStartingDate,
-    setUser2ndExperienceStartingDate,
-  ] = useState("");
+  const [user2ndExperienceStartingDate, setUser2ndExperienceStartingDate] =
+    useState("");
   const handleUser2ndExperienceStartingDate = (e) => {
     setUser2ndExperienceStartingDate(e.target.value);
   };
   // user 2nd experience ending date
-  const [
-    user2ndExperienceEndingDate,
-    setUser2ndExperienceEndingDate,
-  ] = useState("");
+  const [user2ndExperienceEndingDate, setUser2ndExperienceEndingDate] =
+    useState("");
   const handleUser2ndExperienceEndingDate = (e) => {
     setUser2ndExperienceEndingDate(e.target.value);
   };
@@ -243,18 +237,14 @@ const FormComponent = ({ history }) => {
     setUser3rdCompanyName(e.target.value);
   };
   // user 3rd experience starting date
-  const [
-    user3rdExperienceStartingDate,
-    setUser3rdExperienceStartingDate,
-  ] = useState("");
+  const [user3rdExperienceStartingDate, setUser3rdExperienceStartingDate] =
+    useState("");
   const handleUser3rdExperienceStartingDate = (e) => {
     setUser3rdExperienceStartingDate(e.target.value);
   };
   // user 3rd experience ending date
-  const [
-    user3rdExperienceEndingDate,
-    setUser3rdExperienceEndingDate,
-  ] = useState("");
+  const [user3rdExperienceEndingDate, setUser3rdExperienceEndingDate] =
+    useState("");
   const handleUser3rdExperienceEndingDate = (e) => {
     setUser3rdExperienceEndingDate(e.target.value);
   };
@@ -271,56 +261,62 @@ const FormComponent = ({ history }) => {
   // sum up all the information into one object
   const handleUserResumeData = (e) => {
     e.preventDefault();
-    axios.post("https://cv-generator-mern.herokuapp.com/api", {
-      userFirstName,
-      userSecondName,
-      userGender,
-      userAge,
-      userProfession,
-      userLocation,
-      userPhoneNumber,
-      userEmail,
-      userHouseAddress,
-      userProfileDescription,
-      userFirstProfileWebsite,
-      userGitHubProfileName,
-      userSecondProfileWebsite,
-      userLinkedInProfileName,
-      userThirdProfileWebsite,
-      userPersonalWebsiteLink,
-      userHighSchoolDegreeName,
-      userHighSchoolName,
-      userHighSchoolStartingDate,
-      userHighSchoolEndingDate,
-      userHighSchoolExperience,
-      userCollegeDegreeName,
-      userCollegeName,
-      userCollegeStartingDate,
-      userCollegeEndingDate,
-      userCollegeExperience,
-      userBachelorDegreeName,
-      userUniversityName,
-      userBachelorStartingDate,
-      userBachelorEndingDate,
-      userUniversityExperience,
-      user1stExperience,
-      user1stCompanyName,
-      user1stExperienceStartingDate,
-      user1stExperienceEndingDate,
-      user1stCompanyExperience,
-      user2ndExperience,
-      user2ndCompanyName,
-      user2ndExperienceStartingDate,
-      user2ndExperienceEndingDate,
-      user2ndCompanyExperience,
-      user3rdExperience,
-      user3rdCompanyName,
-      user3rdExperienceStartingDate,
-      user3rdExperienceEndingDate,
-      user3rdCompanyExperience,
-      userSkills,
-    });
-    history.push("/view_resume");
+    // https://cv-generator-mern.herokuapp.com/api
+    axios
+      .post("http://localhost:9999/api", {
+        userFirstName,
+        userSecondName,
+        userGender,
+        userAge,
+        userProfession,
+        userLocation,
+        userPhoneNumber,
+        userEmail,
+        userHouseAddress,
+        userProfileDescription,
+        userFirstProfileWebsite,
+        userGitHubProfileName,
+        userSecondProfileWebsite,
+        userLinkedInProfileName,
+        userThirdProfileWebsite,
+        userPersonalWebsiteLink,
+        userHighSchoolDegreeName,
+        userHighSchoolName,
+        userHighSchoolStartingDate,
+        userHighSchoolEndingDate,
+        userHighSchoolExperience,
+        userCollegeDegreeName,
+        userCollegeName,
+        userCollegeStartingDate,
+        userCollegeEndingDate,
+        userCollegeExperience,
+        userBachelorDegreeName,
+        userUniversityName,
+        userBachelorStartingDate,
+        userBachelorEndingDate,
+        userUniversityExperience,
+        user1stExperience,
+        user1stCompanyName,
+        user1stExperienceStartingDate,
+        user1stExperienceEndingDate,
+        user1stCompanyExperience,
+        user2ndExperience,
+        user2ndCompanyName,
+        user2ndExperienceStartingDate,
+        user2ndExperienceEndingDate,
+        user2ndCompanyExperience,
+        user3rdExperience,
+        user3rdCompanyName,
+        user3rdExperienceStartingDate,
+        user3rdExperienceEndingDate,
+        user3rdCompanyExperience,
+        userSkills,
+      })
+      .then((res) => {
+        if (res.data.success) {
+          history.push(`/view_resume/${res.data.resumeData._id}`);
+        }
+      });
   };
   return (
     <Container className="mt-5 mb-2">

@@ -14,9 +14,9 @@ const NavBar = () => {
                 {/* github fork repo button */}
                 <abbr title="fork this project repo on github">
                   <GitHubButton
-                    href="https://github.com/Ali-Tahir4024/cv-generator-app-reactjs/fork"
+                    href="https://github.com/alitahir4024/cv-generator-app-reactjs/fork"
                     data-icon="octicon-repo-forked"
-                    aria-label="Fork Ali-Tahir4024/cv-generator-app-reactjs on GitHub"
+                    aria-label="Fork alitahir4024/cv-generator-app-reactjs on GitHub"
                   >
                     Fork
                   </GitHubButton>
@@ -26,9 +26,9 @@ const NavBar = () => {
                 {/* github star repo button */}
                 <abbr title="star this project repo on github">
                   <GitHubButton
-                    href="https://github.com/Ali-Tahir4024/cv-generator-app-reactjs"
+                    href="https://github.com/alitahir4024/cv-generator-app-reactjs"
                     data-icon="octicon-star"
-                    aria-label="Star Ali-Tahir4024/cv-generator-app-reactjs on GitHub"
+                    aria-label="Star alitahir4024/cv-generator-app-reactjs on GitHub"
                   >
                     Star
                   </GitHubButton>
@@ -38,9 +38,9 @@ const NavBar = () => {
                 {/* github download repo button */}
                 <abbr title="download the project from github">
                   <GitHubButton
-                    href="https://github.com/Ali-Tahir4024/cv-generator-app-reactjs/archive/master.zip"
+                    href="https://github.com/alitahir4024/cv-generator-app-reactjs/archive/master.zip"
                     data-icon="octicon-download"
-                    aria-label="Download Ali-Tahir4024/cv-generator-app-reactjs on GitHub"
+                    aria-label="Download alitahir4024/cv-generator-app-reactjs on GitHub"
                   >
                     Download
                   </GitHubButton>
