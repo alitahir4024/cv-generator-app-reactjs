@@ -20,4 +20,4 @@ CV generator application developed using ReactJS, Express JS,  NodeJS and Mongo 
 
 ## Project Preview:
 
-[CV-generator-application](https://cv-generator-app.netlify.app/)
+[CV-generator-application](https://cv-generator-mern.herokuapp.com/)
